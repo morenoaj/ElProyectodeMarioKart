@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 13</title>
+    <style>
+        /* Arrastrar la imagen al rectangulo */
+    #border_radius{
+        border: 2px solid;
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 10px;
+        background: #6AAFCF;
+        border-radius: 25px;
+    }
+
+    #box_shadow{
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 10px;
+        background: #6AAFCF;
+        box-shadow: 15px 15px 5px #888245;
+    }
+
+    #border_image{
+        border-width: 15px;
+        border-image: url(media/border.png) 30 30 round;
+    }
+    /* Arrastrar la imagen al rectangulo */
+    #multiple_columns{
+            text-align: justify;
+            column-count: 3;
+            column-rule: 2px solid #6AAFCF;
+        }
+    /* Arrastrar la imagen al rectangulo */
+        .font1{
+            font-family: 'Cherry Cream Soda', cursive;
+            font-size: 14px;
+            color: yellow;
+            line-height: 1.3em;
+        }
+
+        .font2{
+            font-family: 'Ropa Sans', sans-serif;
+            font-size: 14px;
+            color: green;
+            line-height: 1.3em;
+        }
+
+        .font3{
+            font-family: 'Butcherman', cursive;
+            font-size: 14px;
+            color: red;
+            line-height: 1.3em;
+        }
+
+        .font4{
+            font-family: 'Rochester', cursive;
+            font-size: 14px;
+            color: blue;
+            line-height: 1.3em;
+        }
+
+        .font5{
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 14px;
+            color: pink;
+            line-height: 1.3em;
+        }
+        /* Arrastrar la imagen al rectangulo */
+        #text_shadow{
+            text-shadow: 20px 20px 10px #6AAFCF;
+        }
+
+        #word_wrap{
+            word-wrap: break-word;
+            width: 150px;
+            border: 1px solid #FF0000;
+        }
+
+        #no_wrap{
+            width: 150px;
+            border: 1px solid #FF0000;
+        }
+        /* Arrastrar la imagen al rectangulo */
+        img[src$=png] {border: 5px solid red;}
+        a[class] {color: green;}
+        a[href="https://www.google.com"] {color: pink;}
+        a[class~="externo"] {color: purple;}
+       /* Arrastrar la imagen al rectangulo */
+        .cdy{
+            text-align: center;
+            background-color: #87CEEB;
+        }
+
+        .cyo{
+            font-size: 1.5rem;
+        }
+
+        @media (min-width: 600px) and (max-width: 768px){
+            .cdy{
+                background-color: #DE3163;
+            }
+        }
+        /* Arrastrar la imagen al rectangulo */
+        #div_both{
+            border: 1px solid green;
+            margin-top: 20px;
+            padding: 15px 30px;
+            width: 250px;
+            resize: both;
+            overflow: auto;
+        }
+
+        #div_horizontal{
+            border: 1px solid green;
+            margin-top: 20px;
+            padding: 15px 30px;
+            width: 250px;
+            resize: horizontal;
+            overflow: auto;
+        }
+
+        #div_vertical{
+            border: 1px solid green;
+            margin-top: 20px;
+            padding: 15px 30px;
+            width: 250px;
+            resize: vertical;
+            overflow: auto;
+        }
+         /* Arrastrar la imagen al rectangulo */
+        /*Hacer foco sobre input */
+        form :focus-within{
+            background-color: yellow;
+        }
+
+        /*Colocar el ratón sobre un enlace */
+        .enlace:hover {
+            background-color: cyan;
+            padding: 2px;
+        }
+
+        /*Mover el ratón sobre un div y resalta todos los enlaces que contiene */
+        .di:hover .enlace{
+            background-color: steelblue;
+            color: white;
+        }
+  /* Arrastrar la imagen al rectangulo */
+  .iinput:checked{
+            height: 20px;
+            width: 20px;
+        }
+
+        .iinput:enabled{
+            background-color: blue;
+        }
+
+        .iinput:disabled{
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        .iinput:read-only{
+            background-color: darkred;
+            color: white;
+        }
+
+        .iinput:read-write{
+            color: white;
+        }
+
+        .iinput:placeholder-shown{
+            background: #555;
+            padding: 5px;
+            border: 2px solid #000;
+            color: white;
+        }
+
+         /* campos requeridos vs opcionales */
+         .input2:required{
+            border: 2px solid yellow;
+        }
+
+        .input2:optional{
+            border: 2px solid grey;
+        }
+
+       /* exp regulares validas e invalidas */
+       .input2:valid{
+        background-color: green;
+        color: white;
+       }
+
+       .input2:invalid{
+        background-color: darkred;
+        color: white;
+       }
+
+       /* dentro o fuera del rango */
+       .input2:in-range{
+        background-color: green;
+        color: white;
+       }
+
+       .input2:out-of-range{
+        background-color: darkred;
+        color: white;
+       }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Puedes ajustar el estilo según tus preferencias */
+        .content-container {
+            max-width: 1000px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h2>Laboratorio 13</h2>
+        <!-- Introducción a Canvas -->
+        <div>
+            <h3>Lab 13.1 - CSS Borders</h3>
+            <div id="border_radius">
+                Con la ayuda de las propiedades de radio de borde, podemos hacer que los bordes de las esquinas sean redondeados...
+            </div>
+            <div id="box_shadow">
+                Con la ayuda de las propiedades box-shadow, podemos crear sombras para un cuadro.
+            </div>
+            <div id="border_image">
+                Puedes ver el borde personalizado. Esto podría estar en el formato *.png o *.jpg.
+            </div>
+        </div>
+
+        <!-- Prueba de Etiqueta Canvas en HTML5 -->
+        <div>
+            <h3>Lab 13.2 - Multicolumn Layout</h3>
+            <div id="multiple_columns">
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+                El zorro marrón rápido salta sobre un perro perezoso derecho.
+            </div>
+        </div>
+
+        <!-- Prueba de Etiqueta Canvas en HTML5 con Texto -->
+        <div>
+            <h3>Lab 13.3 - WebFonts</h3>
+            <p class="font1">ESTA LÍNEA ESTÁ CONTENIENDO LA DIFERENTE FUENTE</p>
+            <p class="font2">ESTA LÍNEA ESTÁ CONTENIENDO LA DIFERENTE FUENTE</p>
+            <p class="font3">ESTA LÍNEA ESTÁ CONTENIENDO LA DIFERENTE FUENTE</p>
+            <p class="font4">ESTA LÍNEA ESTÁ CONTENIENDO LA DIFERENTE FUENTE</p>
+            <p class="font5">ESTA LÍNEA ESTÁ CONTENIENDO LA DIFERENTE FUENTE</p>
+        </div>
+
+        <!-- Arrastrar la imagen al rectángulo -->
+        <div>
+            <h3>Lab 13.4 - Text Properties</h3>
+            <div id="text_shadow">
+                <h1>Texto con Sombra</h1>
+            </div>
+            <div id="word_wrap">No puedes romper la línea aquí.</div>
+            <p>sin usar ajustes de texto irá así.</p>
+            <div id="no_wrap">No puedes romper la línea aquí.</div>
+        </div>
+
+        <!-- Prueba de la etiqueta SVG en HTML5 -->
+        <div>
+            <h3>Lab 13.5 - Attibutes Selectors</h3>
+            <img src="smile.png" alt="Usabilidad" width="300px">
+            <br>
+            <a class="" href="">Enlace 1</a>
+            <a href="https://www.google.com">Enlace 2</a>
+            <a class="externo interno" href="">Enlace 3</a>
+        </div>
+
+        <!-- Círculos SVG con diferentes colores -->
+        <div>
+            <h3>Lab 13.6 - Media Queries</h3>
+            <div class="cdy">
+                <h1>Ejemplo de Media Query</h1>
+                <p class="cyo">Vamos a cambiar el media query para anchos entre 600 y 768 px.</p>
+                <p class="cyo">Observe cómo el color de fondo cambió de azul a rojo.</p>
+            </div>
+        </div>
+
+        <!-- Rectángulo SVG con Diferentes Colores -->
+        <div>
+            <h3>Lab 13.7 - Resize</h3>
+            <div id="div_both">Este div es estirable desde ambas esquinas (Horizontal y Vertical).</div>
+            <div id="div_horizontal">Este div es estirable desde la esquina horizontal.</div>
+            <div id="div_vertical">Este div es estirable desde la esquina vertical.</div>
+        </div>
+
+        <!-- Elipses SVG con Diferentes Colores / Formas -->
+        <div>
+            <h3>Lab 13.8 - Pseudo-Classes de Interacción</h3>
+            <form>
+                <label for="">Name: <input type="text"></label><br>
+                <label for="">Email: <input type="text"></label><br><br>
+                <a class="enlace" href="https://www.google.com">Enlace 2</a> regular <br>
+                <div class="di" id="div_ejemplo"><a href="https://www.google.com">Enlace 3</a>en un Div</div>
+            </form>
+        </div>
+
+        <!-- Polígono SVG -->
+        <div>
+            <h3>Lab 13.9 - Pseudo-Classes de Formularios</h3>
+            <form>
+                <label>Name: <input class="iinput" type="text"></label><br>
+                <label> Email: <input class="iinput" type="text" value="text@test.com" readonly</label><br><br>
+                <input class="iinput" type="checkbox" id="android" name="android" checked>
+                <label for="android">Android</label>
+                <input class="iinput" type="checkbox" name="ios" id="ios">
+                <label for="ios">iOS</label>
+                <button>Botón activado</button>
+                <button disabled> Botón desactivado</button>
+                <input class="iinput" type="text" placeholder="usuario@gmail.com">
+            </form>
+        </div>
+
+        <!-- Texto desde SVG de HTML5 -->
+        <div>
+            <h3>Lab 13.10 - Pseudo-Classes de Validación</h3>
+            <form>
+                <label>Nombre: <input class="input2" type="text" required></label><br>
+                <label>E-mail: <input class="input2" type="text"></label><br>
+                <label>Numero de Empleado: <input class="input2" type="text" name="age" pattern="[0-9]+" /></label>
+                <label>Edad: <input class="input2" type="number" name="age" min="18" max="100" /></label>
+            </form>
+        </div>
+    </div>
+    <!-- Introducción a Canvas -->
+
+</body>
+</html>

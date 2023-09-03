@@ -1,0 +1,140 @@
+@import '../../App/variables.css';
+
+#Presentacion {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#Portada {
+    padding-top: 20px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#Portada * {
+    padding: 10px 0 0 0;
+    margin: 0px;
+}
+
+#DatosEstudiante {
+    padding-top: 40px;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 0px 150px;
+}
+
+#Contenedor-DatosEstudiante {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#BotonEmpezar {
+    width: 200px;
+    height: 70px;
+    margin: 5px 0;
+    align-self: center;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    border-radius: 15px;
+    border-width: 0;
+    color: var(--text-color-2);
+    background-color: var(--button-background-color-1);
+}
+
+.mariokart-star {
+    width: 200px;
+    height: 200px;
+    z-index: 99999;
+}
+
+.left-star {
+    animation: rotate-right 3s linear infinite;
+}
+
+.right-star {
+    animation: rotate-left 3s linear infinite;
+}
+
+#BotonEmpezar:hover {
+    animation: rainbow-button 4s linear infinite;
+}
+
+
+.rainbow:hover {
+    animation: rainbow-text 4s linear infinite;
+}
+
+/*Efectos*/
+@keyframes rainbow-text {
+    0% {
+      color: red;
+    }
+    14% {
+      color: orange;
+    }
+    28% {
+      color: yellow;
+    }
+    42% {
+      color: green;
+    }
+    57% {
+      color: blue;
+    }
+    71% {
+      color: indigo;
+    }
+    85% {
+      color: violet;
+    }
+    100% {
+      color: red;
+    }
+}
+  
+@keyframes rainbow-button {
+    0% {
+        background-color: red;
+    }
+    14% {
+        background-color: orange;
+    }
+    28% {
+        background-color: yellow;
+    }
+    42% {
+        background-color: green;
+    }
+    57% {
+        background-color: blue;
+    }
+    71% {
+        background-color: indigo;
+    }
+    85% {
+        background-color: violet;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+@keyframes rotate-left {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotate-right {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

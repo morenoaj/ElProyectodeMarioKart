@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 11</title>
+    <style>
+    /* Canvas WebGL */
+    canvas{
+        border: 2px solid black;
+        background-color: black;
+        }
+    video{
+        display: none;
+    }
+    /* Cubo 3D con Canvas WebGL */
+    #wapper{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+     body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        /* Puedes ajustar el estilo según tus preferencias */
+        .content-container {
+            max-width: 1600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h2>Laboratorio 11</h2>
+        <!-- Canvas WebGL--> 
+        <div>
+            <h3>Lab 11.1 - Canvas WebGL</h3>
+            <canvas id="glCanvas" width="640" height="480"></canvas>
+        </div>
+
+        <!-- WebGL Demo -->
+        <div>
+            <h3>Lab 11.2 - WebGL Demo - Cubo Rotatorio</h3>
+            <canvas id="glcanvas" width="640" height="480"></canvas>
+            <script src="gl-matrix.js"></script>
+            <script src="webgl.js"></script>
+        </div>
+
+        <!-- Cubo 3D con Canvas WebGL -->
+        <div>
+            <h3>Lab 11.3 - Creando Cubo 3D con Libreria Three JS</h3>
+            <div id="wrapper">
+                <div id="canvas" width="640" height="480"></div>
+                <script src="three.min.js"></script>
+                <script src="cubo3d.js"></script>
+            </div>
+        </div>
+
+    <!-- Canvas WebGL -->
+    <script>
+
+        function main(){
+            const canvas = document.querySelector("#glCanvas");
+            //inicializar contexto GL
+            const gl = canvas.getContext("webgl");
+        
+            //Continuar solo si WebGL esta disponible y funcionando
+            if(gl== null){
+                alert("No se puede inicializar WebGL. Es posible que su navegador o maquina no lo admita");
+                return;
+            }
+        
+            //Establecer color claro a negro, totalmente opaco
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            //Borrar el búfer de color con el color claro especificado
+            gl.clear(gl.COLOR_BUFFER_BIT);
+        }
+        
+        window.onload = main;
+        </script>
+
+</body>
+</html>

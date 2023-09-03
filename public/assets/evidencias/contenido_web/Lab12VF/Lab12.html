@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 12</title>
+    <style>
+    /* Transiciones Demo */
+    a {
+        background: #DDD;
+        color: #222;
+        padding: 2px;
+        border: 1px solid #AAA;
+        transition: all 0.2s ease-out;
+    }
+
+    a:hover {
+        background: #FFF;
+        color: #666;
+        padding: 8px 14px;
+        border: 1px solid #888;
+        transition: all 0.2s ease-in;
+    }
+
+    /* Animaciones Demo */
+    #animated_div {
+        text-align: center;
+        width: 60px;
+        height: 40px;
+        background: #6699FF;
+        color: #FFFFFF;
+        position: relative;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 10px;
+        animation: animated_div 5s infinite;
+        border-radius: 5px;
+    }
+
+    @keyframes animated_div {
+        0% { left: 0px; }
+        20% { left: 50px; background-color: green; }
+        40% { left: 140px; background-color: red; } 
+        60% { left: 280px; background-color: yellow; }
+        80% { left: 425px; background-color: blue; }
+        100% { left: 0px; background-color: pink; }
+    }
+
+    /* Transformaciones Demo */
+    #div_notranslate {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 0, 0, 0.5);
+        border: 1px solid #000000;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+    }
+
+    #div_translate {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 0, 0, 0.5);
+        border: 1px solid #000000;
+        transform: translate(40px, 40px);
+    }
+
+    /* Transformaciones Imagen Rotate3D */
+    .container {
+        margin: 50px;
+        width: 125px;
+        height: 125px;
+        perspective: 300px;
+        border: 4px solid #A2B058;
+        background: #F0F5d8;
+    }
+
+    .transformed {
+        transform: rotate3d(0, 1, 0, 60deg);
+    }
+
+    /* Transformando un DIV con una Imagen con Scale3D */
+    .container1 {
+        margin: 50px;
+        width: 125px;
+        height: 125px;
+        perspective: 300px;
+        border: 4px solid #6486AB;
+        background: #E9EEF3;
+    }
+
+    .transformed1 {
+        transform: scale3d(1, 1, 2) rotate3d(1, 0, 0, 60deg);
+    }
+    /* Transformando un DIV con una imagen Matrix3D */
+    .container4{
+        margin: 50px;
+        width: 125px;
+        height: 125px;
+        perspective: 300px;
+        border: 4px solid #D14E46;
+        background: #FDDDDB;
+    }
+
+    .transformed4{
+        transform: matrix3d(0.359127, -0.469472, 0.806613, 0, 0.190951, 0.882948, 0.428884, 0, -0.913545, 0, 0.406737, 0, 0, 0, 0, 1);
+    }
+  /* Transición de una Estrella y Transformándola con un Giro de 360° */
+    div.swapnil{
+            width: 20px;
+            height: 20px;
+            margin: 20px auto;
+        }
+
+        div.swapnil div.estrella img{
+            width: 20px;
+            height: 20px;
+            color: #FFF;
+            padding: 10px;
+            border-radius: 5px;
+            margin-left: 0;
+            transition: 3s linear;
+        }
+
+        div.swapnil:hover div.estrella img{
+            width: 240px;
+            height: 220px;
+            transform: rotate(360deg);
+        }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+    }
+
+    /* Puedes ajustar el estilo según tus preferencias */
+    .content-container {
+        max-width: 1000px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    h2 {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h2>Laboratorio 12</h2>
+
+        <!-- Transiciones Demo--> 
+        <div>
+            <h3>Lab 12.1 - Ejemplo de Transición en CSS con una etiqueta A</h3>
+            <p><a href="https://www.google.com" target="_blank">Clic aquí!</a></p>            
+        </div>
+
+        <!-- Animaciones Demo -->
+        <div>
+            <h3>Lab 12.2 - Animando una Etiqueta DIV con 6 Keyframes</h3>
+            <div id="animated_div">
+                CSS
+                <span style="font-size: 10px;">DesSoft V</span>
+            </div>
+        </div>
+
+        <!-- Transformaciones -->
+        <div>
+            <h3>Lab 12.3 - Transformando un DIV Trasladándo a una Área cercana</h3>
+            <div id="div_notranslate">original</div>
+            <div id="div_translate">Después del método translate</div>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+        <!-- Transformaciones Imagen Rotate3D -->
+        <div>
+            <h3>Lab 12.4 - Transformando un DIV con una Imagen Rotate3D</h3>
+            <h4>Antes de Rotar:</h4>
+            <div class="container">
+                <img src="club.jpg" alt="Club Card">
+            </div>
+            <h4>Después de Rotar:</h4>
+            <div class="container">
+                <img src="club.jpg" class="transformed" alt="Club Card">
+            </div>
+        </div>
+        <!-- Transformando un DIV con una Imagen con Scale3D -->
+        <div>
+            <h3>Lab 12.5 - Transformando un DIV con una Imagen con Scale3D</h3>
+            <h4>Antes de Escalar:</h4>
+            <div class="container1">
+                <img src="spade.jpg" alt="Club Card">
+            </div>
+            <h4>Después de Escalar:</h4>
+            <div class="container1">
+                <img src="spade.jpg" class="transformed1" alt="Club Card">
+            </div>
+        </div>
+        <!-- Transformando un DIV con una imagen Matrix3D -->
+        <div>
+            <h3>Lab 12.6 - Transformando un DIV con una imagen Matrix3D</h3>
+            <h4>Antes de la Transformación:</h4>
+            <div class="container4">
+                <img src="heart.jpg" alt="Club Card">
+            </div>
+            <h4>Despues de la Transformación:</h4>
+            <div class="container4">
+                <img src="heart.jpg" class="transformed4" alt="Club Card">
+            </div>
+        </div>
+        <!-- Transición de una Estrella y Transformándola con un Giro de 360° -->
+        <div>
+            <h3>Lab 12.7 - Transición de una Estrella y Transformándola con un Giro de 360°</h3>
+            <p>Coloca el cursor sobre el objeto para verlo en acción</p>
+            <div class="swapnil">
+                <div class="estrella">
+                    <img src="star.png" width="20" height="20">
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>

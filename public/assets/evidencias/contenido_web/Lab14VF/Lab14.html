@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 14</title>
+    <style>
+    /* Arrastrar la imagen al rectangulo */
+     body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        /* Puedes ajustar el estilo según tus preferencias */
+        .content-container {
+            max-width: 800px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h2>Laboratorio 14</h2>
+        <!-- Introducción a Canvas --> 
+        <div>
+            <h3>Lab 14.1 - Codificacion Base 64 de Textos</h3>
+            <input type="text" id="haciabase64" />
+            <input type="button" value="Convertir a base 64" onclick="utf_8_to_b64(document.getElementById('haciabase64').value)"/>
+            <label id="resultado1"></label><br />
+            <input type="text" id="desdebase64" />
+            <input type="button" value="Base 64 a texto" onclick="b64_to_utf8(document.getElementById('desdebase64').value)"/>
+            <label id="resultado2"></label><br />
+        </div>
+
+        <!-- Prueba de Etiqueta Canvas en HTML5 -->
+        <div>
+            <h3>Lab 14.2 - Codificación Base 64 de Imágenes</h3>
+            <input id="imagenSeleccionada" type="file" onchange="codificarImagenBase64();"/>
+             <div id="imgTest"></div>
+        </div>
+
+    <!-- Codificación Base 64 de Textos -->
+    <script>
+        function utf_8_to_b64(str) {
+          document.getElementById("resultado1").innerHTML = window.btoa(
+            unescape(encodeURIComponent(str))
+          );
+        }
+        function b64_to_utf8(str) {
+          document.getElementById("resultado2").innerHTML = encodeURIComponent(
+            unescape(window.btoa(str))
+          );
+        }
+      </script>
+  <!-- Codificación Base 64 de Imagenes -->
+<script type='text/javascript'>
+    function codificarImagenBase64(){
+        var filesSelected = document.getElementById("imagenSeleccionada").files;
+        if (filesSelected.length > 0){
+            var fileToLoad = filesSelected[0];
+
+            var fileReader = new FileReader();
+
+            fileReader.onload = function(fileLoadedEvent){
+                var srcData = fileLoadedEvent.target.result;
+
+                var newImage = document.createElement('img');
+                newImage.src = srcData;
+
+                document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+                alert("Resultado de la conversion en base 64:" + document.getElementById("imgTest").innerHTML);
+            }
+            fileReader.readAsDataURL(fileToLoad);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+@import '../../App//variables.css';
+
+#Contenedor-Portafolio{
+    z-index: -1;
+}
+
+#Contenedor-Contenido-Portafolio{
+    margin-top: 530px;
+}
+
+#Contenedor-MysteryBoxes{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#Contenedor-MysteryBoxes button{
+    padding: 0;
+    margin: 0 15px;
+    border-radius: 30px;
+    border-width: 0;
+    background-color: var(--background-color-main);
+    cursor: pointer;
+}
+
+#Contenedor-MysteryBoxes h1{
+    text-align: center;
+}
+
+#Contenedor-Categoria {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.TituloCategoria {
+    text-align: center;
+    font-size: 40px;
+}
+
+/*CSS Seccion de Imagenes*/
+.Lab-Portafolio{
+    font-size: 1rem;
+}
+
+.Lab-Portafolio h2{
+    margin-top: 100px;
+}
+
+.Imagen-Portafolio img{
+    max-width: 500px;
+    height: auto;
+    animation: wobble 0.9s infinite;
+    transform-origin: center;
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateX(0); }
+    25%, 75% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+  }
+
+/*CSS Seccion de links*/
+.Lab-Portafolio a {
+    font-size: 20px;
+    background-color: var(--button-background-color-1);
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.esconder{
+    display: none;
+}
